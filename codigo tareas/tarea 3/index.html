@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tabla Responsiva IMC</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 20px 0;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* contenedor que controla las 2 tablas */
+    .tablas-wrapper {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* cada tabla en su tarjeta */
+    .tabla-box {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    /* el contenedor que hace el scroll interno */
+    .tabla-scroll {
+      max-height: 260px;
+      overflow-x: auto;
+      overflow-y: auto;
+    }
+
+    table {
+      width: 100%;
+      min-width: 600px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    tbody tr:hover {
+      background: #f1f1f1;
+    }
+
+    /* encabezado rosado tabla 1 */
+    .tabla-rosa thead {
+      background: #e91e63;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    /* encabezado verde tabla 2 */
+    .tabla-verde thead {
+      background: #28a745;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    /* desktop: ponerlas lado a lado */
+    @media (min-width: 992px) {
+      .tablas-wrapper {
+        flex-direction: row;
+      }
+      .tabla-box {
+        width: 50%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Tabla de Índice IMC</h1>
+  <p>Esta tabla </p>
+
+  <div class="tablas-wrapper">
+    <!-- Tabla 1: personas -->
+    <div class="tabla-box">
+      <div class="tabla-scroll tabla-rosa">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Edad</th>
+              <th>Peso (kg)</th>
+              <th>Estatura (m)</th>
+              <th>IMC</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ana</td>
+              <td>25</td>
+              <td>52</td>
+              <td>1.60</td>
+              <td>20.3</td>
+            </tr>
+            <tr>
+              <td>Carla</td>
+              <td>30</td>
+              <td>63</td>
+              <td>1.65</td>
+              <td>23.1</td>
+            </tr>
+            <tr>
+              <td>Lucía</td>
+              <td>28</td>
+              <td>75</td>
+              <td>1.67</td>
+              <td>26.9</td>
+            </tr>
+            <tr>
+              <td>Raquel</td>
+              <td>32</td>
+              <td>80</td>
+              <td>1.76</td>
+              <td>25.8</td>
+            </tr>
+            <tr>
+              <td>María</td>
+              <td>29</td>
+              <td>71</td>
+              <td>1.65</td>
+              <td>26.1</td>
+            </tr>
+            <tr>
+              <td>Javiera</td>
+              <td>31</td>
+              <td>60</td>
+              <td>1.59</td>
+              <td>23.7</td>
+            </tr>
+            <tr>
+              <td>Sofía</td>
+              <td>27</td>
+              <td>55</td>
+              <td>1.57</td>
+              <td>22.3</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Tabla 2: rangos IMC -->
+    <div class="tabla-box">
+      <div class="tabla-scroll tabla-verde">
+        <table>
+          <thead>
+            <tr>
+              <th>Clasificación</th>
+              <th>IMC (kg/m²)</th>
+              <th>Riesgo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bajo peso</td>
+              <td>&lt; 18.5</td>
+              <td>Ligero</td>
+            </tr>
+            <tr>
+              <td>Normal</td>
+              <td>18.5 – 24.9</td>
+              <td>Mínimo</td>
+            </tr>
+            <tr>
+              <td>Sobrepeso</td>
+              <td>25 – 29.9</td>
+              <td>Incrementado</td>
+            </tr>
+            <tr>
+              <td>Obesidad grado I</td>
+              <td>30 – 34.9</td>
+              <td>Moderado</td>
+            </tr>
+            <tr>
+              <td>Obesidad grado II</td>
+              <td>35 – 39.9</td>
+              <td>Severo</td>
+            </tr>
+            <tr>
+              <td>Obesidad grado III</td>
+              <td>≥ 40</td>
+              <td>Muy severo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Encuesta de Satisfacción – Vibrar.IA</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="site-header" role="banner">
+            <span class="badge" aria-hidden="true"> Encuesta</span>
+            <div>
+                <h1 class="title">Satisfacción de Producto – Vibrar.IA</h1>
+                <p class="subtitle">Tu opinión nos ayuda a mejorar. Esta encuesta toma menos de 2 minutos y tus
+                    respuestas serán tratadas de manera confidencial.</p>
+            </div>
+        </header>
+
+        <main id="contenido" class="container-main" role="main" aria-labelledby="form-title">
+            <section class="card" aria-label="Formulario de encuesta">
+                <form id="surveyForm" action="#" method="post" novalidate>
+                    <h2 id="form-title" class="sr-only">Formulario de encuesta</h2>
+
+                    <!-- Fila 1: nombre y correo -->
+                    <div class="form-row two-cols">
+                        <div class="field">
+                            <label for="nombre">Nombre del encuestado</label>
+                            <input id="nombre" name="nombre" type="text" placeholder="Ej: Daniela Pérez" required
+                                autocomplete="name" />
+                            <span class="help">Como te gustaría que te contactemos.</span>
+                        </div>
+                        <div class="field">
+                            <label for="email">Correo de contacto</label>
+                            <input id="email" name="email" type="email" placeholder="tucorreo@ejemplo.com" required
+                                autocomplete="email" />
+                            <span class="help">Nunca enviaremos spam.</span>
+                        </div>
+                    </div>
+
+                    <!-- Fila 2: edad y satisfacción -->
+                    <div class="grid-split">
+                        <div class="left">
+                            <div class="field">
+                                <label for="edad">Rango de edad</label>
+                                <select id="edad" name="edad" required>
+                                    <option value="" selected disabled>Selecciona una opción</option>
+                                    <option>Menos de 18</option>
+                                    <option>18 – 24</option>
+                                    <option>25 – 34</option>
+                                    <option>35 – 44</option>
+                                    <option>45 – 54</option>
+                                    <option>55 – 64</option>
+                                    <option>65 o más</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="right">
+                            <fieldset class="field" aria-describedby="sat-help">
+                                <legend>¿Qué tan satisfech@ estás con el producto?</legend>
+                                <div id="sat-help" class="help">1 = Muy insatisfecho, 5 = Muy satisfecho</div>
+                                <div class="radios" role="group" aria-label="Nivel de satisfacción">
+                                    <label class="radio-chip"><input type="radio" name="satisfaccion" value="1"
+                                            required> 1</label>
+                                    <label class="radio-chip"><input type="radio" name="satisfaccion" value="2">
+                                        2</label>
+                                    <label class="radio-chip"><input type="radio" name="satisfaccion" value="3">
+                                        3</label>
+                                    <label class="radio-chip"><input type="radio" name="satisfaccion" value="4">
+                                        4</label>
+                                    <label class="radio-chip"><input type="radio" name="satisfaccion" value="5">
+                                        5</label>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+
+                    <!-- Fila 3: comentarios -->
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="comentarios">Comentarios o sugerencias</label>
+                            <textarea id="comentarios" name="comentarios"
+                                placeholder="Cuéntanos tu experiencia…"></textarea>
+
+                        </div>
+                    </div>
+
+                    <!-- Acciones -->
+                    <div class="actions">
+                        <input type="submit" value="Enviar respuestas" />
+                        <button type="reset" aria-label="Limpiar formulario">Limpiar</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox - Flex Direction - Flex</title>
+    <style>
+        .contenedor {
+            display: flex;
+            flex-direction: column;
+            /* por defecto, en columna para móviles */
+            gap: 10px;
+            /* espacio entre los ítems */
+        }
+
+        .caja {
+            flex: 1;
+            /* cada caja ocupa el mismo espacio disponible */
+            padding: 20px;
+            color: white;
+            text-align: center ;
+        }
+
+        .caja1 {
+            background: #007bff;
+        }
+
+        .caja2 {
+            background: #28a745;
+        }
+
+        .caja3 {
+            background: #dc3545;
+        }
+
+        /* A partir de 768px en adelante (tablets/desktops) */
+        @media (min-width: 768px) {
+            .contenedor {
+                flex-direction: row;
+                /* se alinean en fila */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="caja caja1">Caja 1</div>
+        <div class="caja caja2">Caja 2</div>
+        <div class="caja caja3">Caja 3</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Direction - Flex Wrap - Media Query</title>
+    <style>
+        .cajas {
+            display: flex;
+            /* activa flexbox */
+            flex-direction: column;
+            /* por defecto: apiladas */
+        }
+
+        @media (min-width: 576px) {
+            .cajas {
+                flex-direction: row;
+                /* cambia a fila */
+                flex-wrap: wrap;
+                /* permite salto de línea si no caben */
+            }
+            .cajas div{
+                flex:1 1 48%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .cajas div {
+                flex: 1 1 45%;
+                /* crecen, reducen, y ocupan ~45% */
+            }
+        }
+
+        @media (min-width: 992px) {
+            .cajas div {
+                flex: 1 1 22%;
+                /* ocupan ~1/4 del ancho */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cajas">
+        <div style="background:#007bff; height:80px"></div>
+        <div style="background:#28a745; height:80px"></div>
+        <div style="background:#ffc107; height:80px"></div>
+        <div style="background:#dc3545; height:80px"></div>
+        <div style="background:#8b2f4b; height:80px; text-align:center">Footer</div>
+
+    </div>
+</body>
+
+</html>
