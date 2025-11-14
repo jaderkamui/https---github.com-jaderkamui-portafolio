@@ -12,12 +12,26 @@
         crossorigin="anonymous">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+<head>
+<style>
+  section[id], header[id] {
+    scroll-margin-top: 55px;
+  }
+  .carousel-img-intereses {
+    height: 750px;
+    object-fit: cover;
+  }
+  .nav-link:hover {
+    color: #0dcaf0 !important;
+  }
+  .nav-link:active,
+  .nav-link:focus {
+    color: #0dcaf0 !important;
+  }
+</style>
+
 </head>
-  <style>
-    section[id], header[id] {
-      scroll-margin-top: 50px; 
-    }
-  </style>
 <body class="bg-dark text-light">
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top shadow-sm border-bottom border-secondary">
@@ -42,9 +56,9 @@
   <header id="hero" class="py-5 bg-black border-bottom border-secondary">
     <div class="container">
       <span class="badge rounded-pill text-bg-info mb-3">Portafolio • Full Stack JS • Redes • 3D</span>
-      <h1 class="display-5 fw-bold">Jader – Desarrollador Full Stack &amp; Tech Maker</h1>
+      <h1 class="display-5 fw-bold">Jader – Estudiante de Ingenieria Informatica &amp; Tech Maker</h1>
       <p class="lead text-secondary">
-        Técnico Electrónico y estudiante de Ingeniería Informática, con 19 años de experiencia en soporte TI, automatización e IoT, desarrollo web y fabricación digital.
+        Técnico Electrónico y estudiante de Ingeniería Informática, con 19 años de experiencia en soporte TI, automatización e IoT, diseño 3D y fabricación digital.
       </p>
       <div class="d-flex gap-3 flex-wrap">
         <a class="btn btn-info text-dark fw-semibold" href="https://github.com/jaderkamui" target="_blank" rel="noopener">
@@ -59,6 +73,7 @@
       </div>
     </div>
   </header>
+
   <main class="pb-5">
     <section id="sobre-mi" class="py-5">
       <div class="container">
@@ -79,7 +94,7 @@
                 <h3 class="h5 mt-3">Habilidades clave</h3>
                 <ul class="mb-0">
                   <li>Software: Windows, Linux, AWS, Google Cloud, GIT</li>
-                  <li>Desarrollo: JavaScript, PHP, Python, C#, SQL, HTML, CSS</li>
+                  <li>Desarrollo: C#, SQL, HTML, CSS</li>
                   <li>Diseño: UX/UI, Figma, Blender, 3D, impresión 3D, Grabado y Corte Laser CNC</li>
                   <li>Hardware y redes: Impresoras, Computadores, microcontroladores, CCTV, cableado estructurado</li>
                   <li>Blandas: comunicación, adaptabilidad, liderazgo técnico</li>
@@ -91,26 +106,94 @@
       </div>
     </section>
 
-    <!-- INTERESES -->
-    <section id="intereses" class="py-5">
-      <div class="container">
-        <h2 class="mb-4 fw-bold border-bottom border-info pb-2">
-          <i class="bi bi-stars me-2"></i>Mis intereses
-        </h2>
-        <div class="row">
-          <div class="col-lg-8">
-            <div class="card bg-secondary text-light border-0 shadow-sm">
-              <div class="card-body">
-                <p>
-                  Me gusta la innovación, los <strong>videojuegos</strong> y quiero profundizar en <strong>desarrollo de videojuegos</strong>. Me inspira <strong>H. P. Lovecraft</strong>, disfruto las series de ciencia ficción y el anime. 
-                  Mi sueño es crear un videojuego conocido y combinarlo con mis hobbies como <strong>dibujo y diseño 3D</strong>.
-                </p>
+<!-- INTERESES CON CARRUSEL -->
+<section id="intereses" class="py-5">
+  <div class="container">
+    <h2 class="mb-4 fw-bold border-bottom border-info pb-2">
+      <i class="bi bi-stars me-2"></i>Mis intereses
+    </h2>
+
+    <div class="row g-4">
+      <!-- Texto -->
+      <div class="col-lg-6">
+        <div class="card bg-secondary text-light border-0 shadow-sm h-100">
+          <div class="card-body">
+            <p>
+              Me apasiona la <strong>tecnología aplicada</strong> y cómo combinar distintas áreas para crear proyectos con sentido:
+              desde <strong>desarrollo de software</strong> hasta <strong>diseño 3D</strong> e <strong>IoT</strong>.
+            </p>
+            <p>
+              Disfruto especialmente los <strong>videojuegos</strong> y el <strong>desarrollo de videojuegos</strong>, donde puedo mezclar
+              narrativa, arte y programación. Me inspira el universo de <strong>H. P. Lovecraft</strong>, el terror cósmico, 
+              la ciencia ficción y el anime, elementos que quiero llevar a mis propios proyectos.
+            </p>
+            <p class="mb-1">
+              Algunos de los temas en los que estoy profundizando:
+            </p>
+            <ul class="mb-0">
+              <li>Diseño y programación de <strong>videojuegos 2D</strong> con enfoque en historia y atmósfera.</li>
+              <li>Modelado, impresión 3D y <strong>fabricación digital</strong> para props, piezas y juguetes.</li>
+              <li><strong>Automatización</strong> con microcontroladores (ESP32, Arduino, Raspberry Pi) para proyectos creativos.</li>
+              <li>Exploración de <strong>UX/UI</strong> orientada a interfaces claras, funcionales y con identidad propia.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carrusel -->
+      <div class="col-lg-6">
+        <div class="card bg-secondary text-light border-0 shadow-sm">
+          <div class="card-body">
+            <div class="mx-auto" style="max-width: 520px;">
+              <div id="interesesCarousel" class="carousel slide" data-bs-ride="carousel">
+                <!-- Indicadores (puntos) -->
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#interesesCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#interesesCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#interesesCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#interesesCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                  <button type="button" data-bs-target="#interesesCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                </div>
+
+                <div class="carousel-inner rounded">
+                  <div class="carousel-item active">
+                    <img src="./img/img1.png" class="d-block w-100 carousel-img-intereses" alt="Interés 1">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./img/img2.png" class="d-block w-100 carousel-img-intereses" alt="Interés 2">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./img/img3.png" class="d-block w-100 carousel-img-intereses" alt="Interés 3">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./img/img4.png" class="d-block w-100 carousel-img-intereses" alt="Interés 4">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./img/img5.png" class="d-block w-100 carousel-img-intereses" alt="Interés 5">
+                  </div>
+                </div>
+
+                <!-- Controles -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#interesesCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#interesesCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Siguiente</span>
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+
+    </div> <!-- row -->
+  </div>
+</section>
+
+
+    <!-- PROYECTOS -->
     <section id="proyectos" class="py-5">
       <div class="container">
         <h2 class="mb-4 fw-bold border-bottom border-info pb-2">
@@ -164,6 +247,8 @@
         </div>
       </div>
     </section>
+
+    <!-- CONTACTO -->
     <section id="contacto" class="py-5">
       <div class="container">
         <h2 class="mb-4 fw-bold border-bottom border-info pb-2">
@@ -174,9 +259,7 @@
             <div class="card bg-secondary text-light border-0 shadow-sm">
               <div class="card-body">
                 <p class="mb-4">¿Colaboramos? Escríbeme y conversemos sobre tu proyecto.</p>
-                <!-- FORMULARIO -->
                 <form id="contactForm">
-
                   <input type="hidden" name="_subject" value="Nuevo mensaje desde el formulario de tu portafolio">
                   <input type="hidden" name="_template" value="table">
 
@@ -241,19 +324,16 @@
 
   <!-- Lógica: año + envío por AJAX + toast -->
   <script>
-    // Año dinámico
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Envío del formulario por AJAX a FormSubmit + Toast
     const contactForm = document.getElementById('contactForm');
     const toastEl = document.getElementById('contactToast');
     const contactToast = new bootstrap.Toast(toastEl);
 
     contactForm.addEventListener('submit', async (e) => {
-      e.preventDefault(); // Evita recargar la página
+      e.preventDefault();
 
       const formData = new FormData(contactForm);
-      // Agregamos el mail de destino propio de FormSubmit
       formData.append('_captcha', 'false');
 
       const plainObject = Object.fromEntries(formData.entries());
